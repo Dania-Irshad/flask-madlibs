@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<nav>
+    <a href="/">HOME</a>
+</nav>
+<main id="content">
+    <h1>Answer the prompts</h1>
+    <form action="/your-story">
+        {% for prompt in prompts %}
+        <p>
+            {{ prompt }}: <input type="text" name="{{ prompt }}">
+        </p>
+        {% endfor %}
+        <input type="hidden" name="story_choice" value="{{ story_choice }}">
+        <button>Submit</button>
+    </form>
+</main>
+{% endblock %}

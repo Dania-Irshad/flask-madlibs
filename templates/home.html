@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <main id="content">
+        <h1>Choose a number</h1>
+        <form action="/prompts">
+            <select name="story_choice">
+                {% for choice in story_choices %}
+                    <option value="{{ choice }}">{{ choice }}</option>
+                {% endfor %}
+            </select>
+            <button>SUBMIT</button>
+        </form>
+    </main>
+{% endblock %}
